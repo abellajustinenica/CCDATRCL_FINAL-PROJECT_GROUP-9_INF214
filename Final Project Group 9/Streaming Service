@@ -59,7 +59,7 @@ public class Menu {
 			boolean no = true;
 
 			do{
-				System.out.println("\nWould you like to play other Episode : " + Episode + "\nY(es)/N(o)");
+				System.out.println("\nWould you like to play another Episode : " + Episode + "\nY(es)/N(o)");
 				char userChoice = scan.next().charAt(0);
 				System.out.println("--------------------------------------------------------------------");
 
