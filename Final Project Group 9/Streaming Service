@@ -1,9 +1,10 @@
 import java.util.LinkedList;
 import java.util.Scanner;
+
 public class Menu {
+
 	public static void main(String[] args) {
 		LinkedList<String> Episode = new LinkedList<>();
-		LinkedList<String> Episode1 = new LinkedList<>();
 		try (Scanner scan = new Scanner(System.in)) {
 			System.out.println("WELCOME TO JAVA SERIES ");
 			System.out.println("--------------------------------------------------------------------");
@@ -15,8 +16,8 @@ public class Menu {
 			System.out.println("--------------------------------------------------------------------");
 			System.out.println("Enter the Number of Series: ");
 			int num = scan.nextInt();
-			
-			if(num == 1)
+
+			if (num == 1)
 				System.out.println("[You chose series number " + num + " Too Good To Be True]");
 			else if (num == 2)
 				System.out.println("[You chose series number " + num + " Ang Probinsyano]");
@@ -56,60 +57,54 @@ public class Menu {
 			else
 				System.out.println("Invalid Series");
 
+			System.out.println("Available Episode: " + Episode);
+
 			boolean no = true;
 
-			do{
-				System.out.println("\nWould you like to play another Episode : " + Episode + "\nY(es)/N(o)");
+			do {
+				System.out.println("\nWould you like to play other Episode : " + "\nY(es)/N(o)");
 				char userChoice = scan.next().charAt(0);
 				System.out.println("--------------------------------------------------------------------");
 
 				switch (userChoice) {
-				case 'y':
-					System.out.println("Play Episode ");
+					case 'y':
+						System.out.println("Play Episode ");
 
-					System.out.println("1");
-					System.out.println("2");
-					System.out.println("3");
-					System.out.println("4");
-					System.out.println("--------------------------------------------------------------------");
-					System.out.println("Choose what episode you want to play next: ");
+						System.out.println("1");
+						System.out.println("2");
+						System.out.println("3");
+						System.out.println("4");
+						System.out.println("--------------------------------------------------------------------");
+						System.out.println("Choose what episode you want to play next: ");
 
-					int number = scan.nextInt();
+						int number = scan.nextInt();
 
-					Episode1.add("1");
-					Episode1.add("2");
-					Episode1.add("3");
-					Episode1.add("4");
-					Episode1.remove(episode);
+						if (number == 1)
+							System.out.println("Now playing Episode 1 ");
+						else if (number == 2)
+							System.out.println("Now playing Episode 2");
+						else if (number == 3)
+							System.out.println("Now playing Episode 3");
+						else if (number == 4)
+							System.out.println("Now playing Episode 4 ");
+						else
+							System.out.println("Invalid Episode");
 
-					if (number == 1)
-						System.out.println("Now playing Episode 1 ");
-					else if (number == 2)
-						System.out.println("Now playing Episode 2");
-					else if (number == 3)
-						System.out.println("Now playing Episode 3");
-					else if (number == 4)
-						System.out.println("Now playing Episode 4 ");
-					else
-						System.out.println("Invalid Series");
+						System.out.println("--------------------------------------------------------------------");
 
+						break;
 
-					System.out.println("--------------------------------------------------------------------");
+					case 'n':
+						no = false;
+						System.out.println("You choose exit. Thankyou!!");
+						System.exit(0);
 
-					break;
+						break;
 
-				case 'n':
-					no = false;
-					System.out.println("You choose exit. Thankyou!!");
-					System.exit(0);
-
-
-					break;
-
-				default:
-					System.out.println("That is not a valid entry");
+					default:
+						System.out.println("That is not a valid entry");
 				}
-			} while(no);
+			} while (no);
 		}
 	}
 }
